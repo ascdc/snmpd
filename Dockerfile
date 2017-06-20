@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get -y upgrade && \
 	locale-gen en_US.UTF-8 && \
 	export LANG=en_US.UTF-8 && \
-	apt-get install -y snmpd snmp-mibs-downloader && \
+	apt-get install -y snmpd && \
 	sed -i "s/agentAddress.*/agentAddress\tudp:0.0.0.0:161/g" /etc/snmp/snmpd.conf && \
 	sed -i "s/sysLocation.*/sysLocation\tundefined/g" /etc/snmp/snmpd.conf && \
 	sed -i "s/sysContact.*/sysContact\tasdc.sinica@gmail.com/g" /etc/snmp/snmpd.conf && \
